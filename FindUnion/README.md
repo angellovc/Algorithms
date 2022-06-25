@@ -13,9 +13,10 @@ TODO: complete it!!!
 
 ---
 
-# Simple Implementation
+## Union Find Data Structure (Simple Implementation)
+[ Link to UnionFind Simple Implementation ](FindUnionNormal.ts)
 
-## Union Find Data Structure
+
 The data type used to represent the nodes of this algorithm is an array where each position number of the array represents each node and the values of it represents the relationship between the nodes. Although the Union Find uses an array to store the information, the interpretation and managing we give to the array in this cases converts it into a totally different data structure: Union Find. 
 
 ![Alt FindUnion image](../.assets/findunion.png);
@@ -78,3 +79,28 @@ Meanwhile it will return False
 ```
   fn.connected(0,7);
 ```
+---
+
+## Performance
+Although this implementaiton is functional, it's performance is not especially acceptable.
+
+We have 3 steps:
+- Initialization
+- Union
+- Connection
+
+In the worst case scenario:
+
+Initialization takes:
+$$BigO(N)$$
+
+Union Takes:
+$$BigO(N^2)$$
+> It is because imagine we have to establish a relationship between all of the elements of the array, so we'll have to iterate over the nodes 'N' times, being 'N' the length of the Array containing them.
+
+Connection Takes:
+$$BigO(1)$$
+
+Although the Connection methods has no delay in assessing the condition passed through, the worst cases scenario of using this Data Structure implementation makes it almost useless.
+
+
