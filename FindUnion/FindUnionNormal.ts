@@ -30,14 +30,4 @@ class FindUnion {
 
 }
 
-const fn = new FindUnion(10);
-console.log(fn.nodes);
-fn.union(1,2);
-console.log(fn.nodes);
-fn.union(1,3);
-console.log(fn.nodes);
-console.log(fn.connected(1,3));
-console.log(fn.connected(1,2));
-console.log(fn.connected(1,6));
-
 export default FindUnion;

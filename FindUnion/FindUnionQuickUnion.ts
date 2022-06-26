@@ -18,18 +18,18 @@ class FindUnion {
         this._nodes = nodes;
     }
 
-    root(number:number) {
+    public root(number:number):number {
         if (number === this.nodes[number])
             return this.nodes[number];
         return this.root(this.nodes[number]);
     }
 
-    union(p:number, q:number) {
+    public union(p:number, q:number):void {
         const qRoot = this.root(q);
         this.nodes[p] = qRoot;
     }
 
-    connected(p:number, q:number) {
+    public connected(p:number, q:number):boolean {
         const pRoot = this.root(p);
         const qRoot = this.root(q);
         if (qRoot === pRoot)
@@ -37,19 +37,6 @@ class FindUnion {
         return false;
     }
 }
-
-
-
-const fu = new FindUnion(10);
-console.log(fu.nodes);
-console.log(fu.root(2));
-fu.union(1,0);
-console.log(fu.nodes);
-console.log(fu.connected(0,1));
-console.log(fu.connected(1,0));
-console.log(fu.connected(1,1));
-console.log(fu.connected(0,0));
-console.log(fu.connected(0,2));
 
 
 export default FindUnion;
